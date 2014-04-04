@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<title></title><!-- 
+	<link rel="stylesheet" type="text/css" media="screen" href="css/master.css" /> -->
+	<script src="http://yui.yahooapis.com/3.5.0/build/yui/yui-min.js"></script>
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+	<div id="demo"></div>
+
+
+	<script type="text/javascript">
+
+		YUI({
+			groups: {
+				'group': {
+					base: './base/modules/',
+					modules: {
+						'cat-core': {
+							path: 'cat-core/cat-core.js',
+							requires: ['node', 'cat-call', 'cat-properties']
+						},
+						'cat-properties': {
+							path: 'cat-properties/cat-properties.js'
+						},
+						'cat-call': {
+							path: 'cat-call/cat-call.js'
+						}
+					}
+				}
+			}
+		}).use('cat-core', function(Y){
+
+			Y.Cat.infos(Y.one('#demo'));
+
+		});
+
+	</script>
+ 
+</body>
+</html>
