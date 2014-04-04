@@ -11,20 +11,14 @@
 </head>
 <body>
 
-	<div id="container">
-		<button id="myButton">TEST</button>
-	</div>
+	<h1 id="demo"></h1>
 
 
 	<script type="text/javascript">
 
-		YUI().use('node', 'event', function(Y){
+		YUI().use('node-base', function(Y, loaderResponse){
 
-			Y.one('#myButton').on('click', function(e){
-				var me = e.currentTarget;
-
-				alert(me.get('innerHTML'));
-			});
+			Y.one('#demo').set('text', "Hello World");
 
 		});
 
